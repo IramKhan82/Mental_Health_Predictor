@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mental Health Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Header -->
+        <header class="page-header">
+            <div class="logo">
+                <span class="logo-icon">🧠</span>
+                <span>Mental Health Predictor</span>
+            </div>
+
+            <p class="header-description">
+                Understand your digital habits and explore their possible
+                relationship with your well-being.
+            </p>
+        </header>
+
+
+        <!-- Main Card -->
+        <section class="prediction-card">
+
+            <div class="card-heading">
+                <h1>Mental Health Assessment</h1>
+
+                <p>
+                    Enter your details below to receive an AI-based prediction.
+                </p>
+            </div>
+
+
+            <!-- Prediction Form -->
+            <form id="predict-form">
+
+                <!-- Personal Information -->
+                <div class="form-section">
+
+                    <h2>Personal Information</h2>
+
+                    <div class="form-grid">
+
+                        <!-- Age -->
+                        <div class="form-group">
+                            <label for="age">Age</label>
+
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                min="1"
+                                max="120"
+                                placeholder="Enter your age"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Gender -->
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+
+                            <select id="gender" name="gender" required>
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Country -->
+                        <div class="form-group">
+                            <label for="country">Country</label>
+
+                            <input
+                                type="text"
+                                id="country"
+                                name="country"
+                                placeholder="Enter your country"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Academic Level -->
+                        <div class="form-group">
+                            <label for="academic_level">Academic Level</label>
+
+                            <select
+                                id="academic_level"
+                                name="academic_level"
+                                required
+                            >
+                                <option value="">Select academic level</option>
+                                <option value="High School">High School</option>
+                                <option value="Undergraduate">Undergraduate</option>
+                                <option value="Graduate">Graduate</option>
+                                <option value="Postgraduate">Postgraduate</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Digital Habits -->
+                <div class="form-section">
+
+                    <h2>Digital Habits</h2>
+
+                    <div class="form-grid">
+
+                        <!-- Platform -->
+                        <div class="form-group">
+                            <label for="most_used_platform">
+                                Most Used Platform
+                            </label>
+
+                            <select
+                                id="most_used_platform"
+                                name="most_used_platform"
+                                required
+                            >
+                                <option value="">Select platform</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="TikTok">TikTok</option>
+                                <option value="YouTube">YouTube</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="Linkedin">LinkedIn</option>
+                                <option value="Snapchat">Snapchat</option>
+                                <option value="WhatsApp">WhatsApp</option>
+                                <option value="Vkontakte">VKontakte</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Purpose -->
+                        <div class="form-group">
+                            <label for="purpose_of_use">
+                                Primary Purpose of Use
+                            </label>
+
+                            <select
+                                id="purpose_of_use"
+                                name="purpose_of_use"
+                                required
+                            >
+                                <option value="">Select purpose</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Education">Education</option>
+                                <option value="Communication">Communication</option>
+                                <option value="Work">Work</option>
+                                <option value="News">News</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Daily Usage -->
+                        <div class="form-group">
+                            <label for="avg_daily_usage_hours">
+                                Average Daily Social Media Usage (Hours)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="avg_daily_usage_hours"
+                                name="avg_daily_usage_hours"
+                                min="0"
+                                max="24"
+                                step="0.1"
+                                placeholder="e.g. 4.5"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Daily Unlocks -->
+                        <div class="form-group">
+                            <label for="daily_unlocks">
+                                Daily Phone Unlocks
+                            </label>
+
+                            <input
+                                type="number"
+                                id="daily_unlocks"
+                                name="daily_unlocks"
+                                min="0"
+                                placeholder="e.g. 50"
+                                required
+                            >
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Lifestyle Information -->
+                <div class="form-section">
+
+                    <h2>Lifestyle Information</h2>
+
+                    <div class="form-grid">
+
+                        <!-- Study Hours -->
+                        <div class="form-group">
+                            <label for="study_hours">
+                                Daily Study Hours
+                            </label>
+
+                            <input
+                                type="number"
+                                id="study_hours"
+                                name="study_hours"
+                                min="0"
+                                max="24"
+                                step="0.1"
+                                placeholder="e.g. 5"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Physical Activity -->
+                        <div class="form-group">
+                            <label for="physical_activity_hours">
+                                Daily Physical Activity (Hours)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="physical_activity_hours"
+                                name="physical_activity_hours"
+                                min="0"
+                                max="24"
+                                step="0.1"
+                                placeholder="e.g. 1"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Sleep Hours -->
+                        <div class="form-group">
+                            <label for="sleep_hours_per_night">
+                                Sleep Hours per Night
+                            </label>
+
+                            <input
+                                type="number"
+                                id="sleep_hours_per_night"
+                                name="sleep_hours_per_night"
+                                min="0"
+                                max="24"
+                                step="0.1"
+                                placeholder="e.g. 7.5"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Stress Level -->
+                        <div class="form-group">
+                            <label for="stress_level">
+                                Perceived Stress Level
+                            </label>
+
+                            <select
+                                id="stress_level"
+                                name="stress_level"
+                                required
+                            >
+                                <option value="">Select stress level</option>
+                                <option value="Low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="High">High</option>
+                                <option value="Very High">Very High</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- Form Error Message -->
+                <div
+                    class="error-message"
+                    id="form-error"
+                    role="alert"
+                    hidden
+                ></div>
+
+
+                <!-- Submit Button -->
+                <button
+                    type="submit"
+                    id="submit-btn"
+                    class="submit-btn"
+                >
+                    Predict Mental Health Score
+                </button>
+
+                <p class="privacy-note">
+                    This tool provides a machine-learning prediction for
+                    informational purposes only. It is not a medical diagnosis.
+                </p>
+
+            </form>
+
+
+            <!-- Loading State -->
+            <div id="state-loading" class="result-state" hidden>
+
+                <div class="loader"></div>
+
+                <h2>Analyzing Your Information...</h2>
+
+                <p>Please wait while the model processes your responses.</p>
+
+            </div>
+
+
+            <!-- Prediction Result -->
+            <div id="state-result" class="result-state" hidden>
+
+                <div class="result-icon">📊</div>
+
+                <h2>Your Prediction Result</h2>
+
+                <div class="score-display">
+                    <span id="score-number">--</span>
+                </div>
+
+                <p id="score-band" class="score-band"></p>
+
+                <p id="score-context" class="score-context"></p>
+
+                <div class="gauge">
+                    <div id="gauge-fill" class="gauge-fill"></div>
+                </div>
+
+                <p class="result-disclaimer">
+                    This result is generated by the trained machine-learning
+                    model. Its meaning depends on the target variable and
+                    training data used for your project.
+                </p>
+
+                <button
+                    type="button"
+                    id="reset-btn"
+                    class="secondary-btn"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+
+            <!-- Error State -->
+            <div id="state-error" class="result-state" hidden>
+
+                <div class="result-icon">⚠️</div>
+
+                <h2>Prediction Failed</h2>
+
+                <p id="error-label" class="error-label">
+                    We could not generate your prediction.
+                </p>
+
+                <p id="error-copy" class="error-copy">
+                    Please check your details and try again.
+                </p>
+
+                <button
+                    type="button"
+                    id="error-retry-btn"
+                    class="secondary-btn"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <p>
+                Mental Health Prediction Project |
+                Machine Learning & AI
+            </p>
+
+            <p>
+                For educational and informational purposes only.
+            </p>
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

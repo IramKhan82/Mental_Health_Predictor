@@ -1,0 +1,985 @@
+/* =========================================
+   MENTAL HEALTH PREDICTION
+   Premium Lavender & Purple UI
+========================================= */
+
+/* ---------- Google Font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ---------- Global Variables ---------- */
+
+:root {
+    --primary: #7357f6;
+    --primary-dark: #5b3ee4;
+    --primary-light: #eeeaff;
+
+    --background: #f7f6ff;
+    --surface: #ffffff;
+
+    --text-primary: #24213b;
+    --text-secondary: #77758e;
+
+    --border: #e9e6f5;
+
+    --success: #159c72;
+    --danger: #e64b68;
+
+    --shadow-sm: 0 4px 15px rgba(53, 39, 111, 0.05);
+    --shadow-md: 0 12px 35px rgba(53, 39, 111, 0.09);
+    --shadow-lg: 0 25px 70px rgba(53, 39, 111, 0.12);
+
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+}
+
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background:
+        radial-gradient(
+            circle at 8% 5%,
+            rgba(174, 153, 255, 0.24),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 20%,
+            rgba(255, 190, 224, 0.20),
+            transparent 28%
+        ),
+        linear-gradient(135deg, #faf9ff 0%, #f4f2ff 55%, #fff8fc 100%);
+
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* ---------- Main Container ---------- */
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 42px 0 25px;
+}
+
+
+/* ---------- Header ---------- */
+
+.page-header {
+    text-align: center;
+    margin-bottom: 34px;
+    animation: fadeInDown 0.7s ease both;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.logo-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 49px;
+    height: 49px;
+
+    font-size: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #eee8ff,
+        #fce9f7
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+
+    box-shadow: var(--shadow-sm);
+}
+
+.header-description {
+    max-width: 620px;
+    margin: 0 auto;
+
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ---------- Main Card ---------- */
+
+.prediction-card {
+    position: relative;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    border-radius: var(--radius-lg);
+
+    padding: 42px;
+
+    box-shadow: var(--shadow-lg);
+
+    animation: fadeInUp 0.7s ease both;
+}
+
+.prediction-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #8e76ff,
+        #b39cff,
+        #f3a8d7,
+        #8e76ff
+    );
+
+    background-size: 200% 100%;
+    animation: gradientMove 6s linear infinite;
+}
+
+
+/* ---------- Card Heading ---------- */
+
+.card-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.card-heading h1 {
+    font-size: clamp(25px, 4vw, 35px);
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    line-height: 1.3;
+
+    background: linear-gradient(
+        110deg,
+        #28213f,
+        #7659ec,
+        #9d66c9
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 12px;
+}
+
+.card-heading p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* ---------- Form Sections ---------- */
+
+.form-section {
+    position: relative;
+
+    padding: 25px;
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fcfbff 100%
+    );
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.form-section:hover {
+    border-color: #d9d0ff;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-section h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--text-primary);
+
+    font-size: 17px;
+    font-weight: 750;
+
+    margin-bottom: 24px;
+    letter-spacing: -0.3px;
+}
+
+.form-section h2::before {
+    content: "";
+
+    width: 5px;
+    height: 24px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        180deg,
+        #957cff,
+        #6b4ee6
+    );
+}
+
+
+/* ---------- Form Grid ---------- */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 23px 25px;
+}
+
+
+/* ---------- Form Groups ---------- */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.form-group label {
+    display: block;
+
+    color: #403b59;
+
+    font-size: 13px;
+    font-weight: 650;
+
+    margin-bottom: 9px;
+    line-height: 1.5;
+}
+
+
+/* ---------- Inputs & Selects ---------- */
+
+.form-group input,
+.form-group select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: 52px;
+
+    padding: 0 15px;
+
+    color: var(--text-primary);
+    background-color: #fbfaff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    border: 1px solid #e6e2f2;
+    border-radius: 12px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.form-group input::placeholder {
+    color: #aaa6bd;
+    font-weight: 400;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #c9bfff;
+    background-color: #ffffff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+    background-color: #ffffff;
+
+    box-shadow: 0 0 0 4px rgba(115, 87, 246, 0.11);
+
+    transform: translateY(-1px);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select:invalid {
+    color: #aaa6bd;
+}
+
+.form-group select option {
+    color: var(--text-primary);
+    background-color: #ffffff;
+}
+
+
+/* ---------- Number Input ---------- */
+
+.form-group input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+    opacity: 0.6;
+}
+
+
+/* ---------- Submit Button ---------- */
+
+.submit-btn {
+    position: relative;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 57px;
+
+    margin-top: 12px;
+    padding: 15px 22px;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 750;
+    letter-spacing: 0.1px;
+
+    background: linear-gradient(
+        110deg,
+        #7357f6 0%,
+        #8967f8 48%,
+        #a26bea 100%
+    );
+
+    border: none;
+    border-radius: 14px;
+
+    box-shadow: 0 9px 24px rgba(115, 87, 246, 0.27);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.submit-btn::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 14px 32px rgba(115, 87, 246, 0.34);
+
+    filter: saturate(1.1);
+}
+
+.submit-btn:hover::before {
+    left: 140%;
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+
+/* ---------- Privacy Note ---------- */
+
+.privacy-note {
+    max-width: 600px;
+
+    margin: 17px auto 0;
+
+    color: #9290a5;
+
+    font-size: 11px;
+    line-height: 1.8;
+
+    text-align: center;
+}
+
+
+/* ---------- Result States ---------- */
+
+.result-state {
+    margin-top: 25px;
+    padding: 32px;
+
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #f8f5ff
+    );
+
+    border: 1px solid #e9e2ff;
+    border-radius: 22px;
+
+    animation: fadeInUp 0.5s ease both;
+}
+
+.result-state[hidden],
+[hidden] {
+    display: none !important;
+}
+
+.result-state h2 {
+    color: var(--text-primary);
+
+    font-size: 23px;
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.result-state > p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.result-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    font-size: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #eee8ff,
+        #fce7f6
+    );
+
+    border-radius: 20px;
+}
+
+
+/* ---------- Prediction Score ---------- */
+
+.score-display {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 145px;
+    height: 145px;
+
+    margin: 24px auto;
+
+    background: linear-gradient(
+        145deg,
+        #ffffff,
+        #eee9ff
+    );
+
+    border: 8px solid #e5dcff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 8px rgba(115, 87, 246, 0.06),
+        0 15px 35px rgba(115, 87, 246, 0.13);
+}
+
+.score-display span {
+    color: var(--primary);
+
+    font-size: 37px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.score-band {
+    display: inline-block;
+
+    margin: 0 auto 12px;
+    padding: 8px 17px;
+
+    color: #6244d8 !important;
+
+    font-size: 13px !important;
+    font-weight: 750;
+
+    background-color: #eee8ff;
+
+    border: 1px solid #e0d5ff;
+    border-radius: 30px;
+}
+
+.score-context {
+    max-width: 550px;
+    margin: 0 auto 20px;
+}
+
+
+/* ---------- Score Gauge ---------- */
+
+.gauge {
+    width: 100%;
+    height: 10px;
+
+    margin: 25px 0 15px;
+
+    overflow: hidden;
+
+    background: #eae6f6;
+
+    border-radius: 30px;
+}
+
+.gauge-fill {
+    width: 0;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #9c83ff,
+        #7357f6,
+        #bd77df
+    );
+
+    border-radius: inherit;
+
+    transition: width 1s ease;
+}
+
+.result-disclaimer {
+    margin: 20px 0;
+    font-size: 12px !important;
+}
+
+
+/* ---------- Secondary Button ---------- */
+
+.secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    margin-top: 18px;
+    padding: 12px 25px;
+
+    color: var(--primary);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 750;
+
+    background: #ffffff;
+
+    border: 1px solid #dcd3ff;
+    border-radius: 12px;
+
+    box-shadow: var(--shadow-sm);
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.secondary-btn:hover {
+    color: #ffffff;
+
+    background: linear-gradient(
+        110deg,
+        #7357f6,
+        #9871ed
+    );
+
+    border-color: transparent;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(115, 87, 246, 0.2);
+}
+
+
+/* ---------- Error Message ---------- */
+
+.error-message {
+    padding: 13px 15px;
+    margin: 18px 0;
+
+    color: #b83250;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    background: #fff0f3;
+
+    border: 1px solid #ffd4de;
+    border-radius: 12px;
+}
+
+.error-label {
+    color: var(--danger) !important;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.error-copy {
+    color: var(--text-secondary);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+
+/* ---------- Loading Animation ---------- */
+
+.loader {
+    width: 52px;
+    height: 52px;
+
+    margin: 10px auto 22px;
+
+    border: 5px solid #eee8ff;
+    border-top-color: var(--primary);
+    border-right-color: #b79cff;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+#state-loading h2 {
+    margin-bottom: 8px;
+}
+
+
+/* ---------- Footer ---------- */
+
+.page-footer {
+    padding: 25px 10px 10px;
+
+    text-align: center;
+
+    color: #9692aa;
+
+    font-size: 11px;
+    line-height: 2;
+}
+
+.page-footer p:first-child {
+    color: #77718e;
+    font-weight: 600;
+}
+
+
+/* ---------- Animations ---------- */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+
+/* ---------- Text Selection ---------- */
+
+::selection {
+    color: #ffffff;
+    background: #8a6af4;
+}
+
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f2ff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c6b8f5;
+    border: 2px solid #f5f2ff;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9d86e9;
+}
+
+
+/* ---------- Tablet Responsive ---------- */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 94%;
+        padding-top: 28px;
+    }
+
+    .prediction-card {
+        padding: 28px 22px;
+        border-radius: 23px;
+    }
+
+    .card-heading {
+        margin-bottom: 28px;
+    }
+
+    .form-section {
+        padding: 21px 17px;
+        margin-bottom: 19px;
+    }
+
+    .form-grid {
+        gap: 19px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .header-description {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+}
+
+
+/* ---------- Mobile Responsive ---------- */
+
+@media (max-width: 520px) {
+
+    .container {
+        width: 93%;
+        padding-top: 23px;
+    }
+
+    .page-header {
+        margin-bottom: 24px;
+    }
+
+    .logo {
+        gap: 9px;
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 21px;
+        border-radius: 13px;
+    }
+
+    .header-description {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .prediction-card {
+        padding: 25px 15px;
+        border-radius: 20px;
+    }
+
+    .card-heading h1 {
+        font-size: 25px;
+        letter-spacing: -0.7px;
+    }
+
+    .card-heading p {
+        font-size: 12px;
+    }
+
+    .form-section {
+        padding: 20px 14px;
+        border-radius: 15px;
+    }
+
+    .form-section h2 {
+        font-size: 15px;
+        margin-bottom: 19px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 49px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        min-height: 53px;
+        font-size: 13px;
+        padding: 14px;
+    }
+
+    .privacy-note {
+        font-size: 10px;
+    }
+
+    .result-state {
+        padding: 25px 16px;
+    }
+
+    .result-state h2 {
+        font-size: 20px;
+    }
+
+    .score-display {
+        width: 125px;
+        height: 125px;
+    }
+
+    .score-display span {
+        font-size: 32px;
+    }
+
+    .page-footer {
+        font-size: 10px;
+    }
+}
+
+
+/* ---------- Reduced Motion Accessibility ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
